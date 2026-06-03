@@ -1,0 +1,47 @@
+[
+  {
+    "key": "ppm",
+    "env": "dev",
+    "name": "PPM",
+    "appId": "ppm-app-mvp-dev",
+    "doUrl": "https://cloud.digitalocean.com/apps/4f506979-a64e-4280-b077-42e420445e6c?i=3a73e5",
+    "customUrl": "https://ppm.palisaid.com",
+    "internalUrl": "https://jellyfish-app-7zq8i.ondigitalocean.app/",
+    "ips": ["162.159.140.98"],
+    "branch": "dev"
+  },
+  {
+    "key": "scout",
+    "env": "dev",
+    "name": "Scout",
+    "appId": "scout-app-mvp-dev",
+    "doUrl": "https://cloud.digitalocean.com/apps/109593a5-56db-46d4-a553-53ae7a87d0dc?i=3a73e5",
+    "customUrl": "https://scout.palisaid.com",
+    "internalUrl": "https://scout-app-mvp-dev-v3qi5.ondigitalocean.app/",
+    "ips": ["162.159.140.98"],
+    "branch": "feature/PUI-362-scout-patient-list-view"
+  },
+  {
+    "key": "ppm",
+    "env": "demo",
+    "name": "PPM",
+    "appId": "ppm-app-demo",
+    "doUrl": "https://cloud.digitalocean.com/apps/9df48957-1399-4427-9631-7e40afe78ec3?i=3a73e5",
+    "customUrl": "https://demo-ppm.palisaid.com/",
+    "internalUrl": "http://palisaid-app-demo-cnadk.ondigitalocean.app",
+    "ips": ["162.159.140.98", "172.66.0.96"],
+    "branch": "demo"
+  },
+  {
+    "key": "scout",
+    "env": "demo",
+    "name": "Scout",
+    "appId": "scout-app-demo",
+    "doUrl": "https://cloud.digitalocean.com/apps/15e3dda1-1516-4da4-9a43-21c80ad2313e?i=3a73e5",
+    "customUrl": "https://demo-scout.palisaid.com/login",
+    "internalUrl": "https://scout-app-demo-etcfo.ondigitalocean.app/",
+    "ips": ["162.159.140.98"],
+    "branch": "feature/PUI-362-scout-patient-list-view",
+    "retired": ["134.199.228.23", "old rooney custom Droplet workflow"]
+  }
+]
