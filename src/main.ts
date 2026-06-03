@@ -27,16 +27,16 @@ const APP_ICON: Record<AppKey, string> = {
 
 function copyBtn(value: string): HTMLButtonElement {
   const btn = el('button', { class: 'copy-btn', title: 'Copy' })
-  btn.append(icon('copy', 'font-size:14px'))
+  btn.append(icon('copy', 'font-size:1rem'))
   btn.addEventListener('click', () => {
     navigator.clipboard.writeText(value).then(() => {
       btn.classList.add('copied')
       btn.innerHTML = ''
-      btn.append(icon('check', 'font-size:14px'))
+      btn.append(icon('check', 'font-size:1rem'))
       setTimeout(() => {
         btn.classList.remove('copied')
         btn.innerHTML = ''
-        btn.append(icon('copy', 'font-size:14px'))
+        btn.append(icon('copy', 'font-size:1rem'))
       }, 1500)
     })
   })
@@ -66,7 +66,7 @@ function buildCard(cfg: AppConfig): HTMLElement {
     el('div', { class: 'card-name' }, cfg.name),
     el('div', { class: 'app-id' }, cfg.appId),
   )
-  head.append(appIcon, title, a(cfg.doUrl, 'do-link', 'DO', icon('external-link', 'font-size:11px')))
+  head.append(appIcon, title, a(cfg.doUrl, 'do-link', 'DO', icon('external-link', 'font-size:0.75rem')))
   card.append(head)
 
   // URLs
@@ -83,7 +83,7 @@ function buildCard(cfg: AppConfig): HTMLElement {
   // Branch row
   const branchRow = el('div', { class: 'row' })
   const chip = el('span', { class: 'branch-chip', title: cfg.branch })
-  chip.append(icon('git-branch', 'font-size:11px'), cfg.branch)
+  chip.append(icon('git-branch', 'font-size:0.75rem'), cfg.branch)
   branchRow.append(el('span', { class: 'row-label' }, 'Branch'), chip)
   card.append(branchRow)
 
