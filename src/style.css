@@ -100,8 +100,14 @@ main {
 
 .cards {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(min(370px, 100%), 1fr));
+  grid-template-columns: 1fr;
   gap: 0.5rem;
+}
+
+@media (min-width: 700px) {
+  .cards {
+    grid-template-columns: repeat(auto-fill, minmax(370px, 1fr));
+  }
 }
 
 .card {
@@ -112,6 +118,7 @@ main {
   display: flex;
   flex-direction: column;
   gap: 0;
+  min-width: 0;
 }
 
 /* ── Card header ── */
@@ -206,8 +213,7 @@ main {
 .ip-pills {
   display: flex;
   gap: 0.3rem;
-  flex-wrap: nowrap;
-  overflow: hidden;
+  flex-wrap: wrap;
   flex: 1;
   min-width: 0;
 }
@@ -224,7 +230,7 @@ main {
 }
 
 .branch-chip {
-  display: inline-block;
+  display: block;
   background: var(--branch-bg);
   color: var(--branch-text);
   font-family: ui-monospace, monospace;
@@ -239,5 +245,8 @@ main {
 .branch-text { overflow-wrap: anywhere; line-height: 1.5; }
 
 @media (max-width: 600px) {
+  body { padding: 1.5rem 1rem 3rem; }
   .cards { grid-template-columns: 1fr; }
+  .row-label { width: 2.75rem; font-size: 0.6rem; }
+  .card { padding: 0.75rem 0.875rem; }
 }
