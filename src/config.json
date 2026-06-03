@@ -11,17 +11,6 @@
     "branch": "dev"
   },
   {
-    "key": "scout",
-    "env": "dev",
-    "name": "Scout",
-    "appId": "scout-app-mvp-dev",
-    "doUrl": "https://cloud.digitalocean.com/apps/109593a5-56db-46d4-a553-53ae7a87d0dc?i=3a73e5",
-    "customUrl": "https://scout.palisaid.com",
-    "internalUrl": "https://scout-app-mvp-dev-v3qi5.ondigitalocean.app/",
-    "ips": ["162.159.140.98"],
-    "branch": "feature/PUI-362-scout-patient-list-view"
-  },
-  {
     "key": "ppm",
     "env": "demo",
     "name": "Practice Management",
