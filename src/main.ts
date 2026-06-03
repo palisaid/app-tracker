@@ -45,12 +45,10 @@ function copyBtn(value: string): HTMLButtonElement {
 
 function urlRow(label: string, url: string): HTMLElement {
   const display = url.replace(/^https?:\/\//, '').replace(/\/$/, '')
+  const link = a(url, 'url-link', display)
+  link.title = url
   const row = el('div', { class: 'row' })
-  row.append(
-    el('span', { class: 'row-label' }, label),
-    a(url, 'url-link', display),
-    copyBtn(url),
-  )
+  row.append(el('span', { class: 'row-label' }, label), link, copyBtn(url))
   return row
 }
 
@@ -83,7 +81,9 @@ function buildCard(cfg: AppConfig): HTMLElement {
   // Branch row
   const branchRow = el('div', { class: 'row' })
   const chip = el('span', { class: 'branch-chip', title: cfg.branch })
-  chip.append(icon('git-branch', 'font-size:0.75rem'), cfg.branch)
+  const branchIcon = icon('git-branch', 'font-size:0.75rem;vertical-align:middle')
+  branchIcon.classList.add('branch-icon')
+  chip.append(branchIcon, el('span', { class: 'branch-text' }, cfg.branch))
   branchRow.append(el('span', { class: 'row-label' }, 'Branch'), chip)
   card.append(branchRow)
 

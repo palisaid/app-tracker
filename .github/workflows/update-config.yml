@@ -1,0 +1,69 @@
+name: Update App Config
+
+on:
+  workflow_dispatch:
+    inputs:
+      app:
+        description: App
+        required: true
+        type: choice
+        options:
+          - ppm-dev
+          - scout-dev
+          - ppm-demo
+          - scout-demo
+      branch:
+        description: Branch name
+        required: false
+      custom_url:
+        description: Custom URL
+        required: false
+      internal_url:
+        description: Internal URL
+        required: false
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Apply changes
+        env:
+          APP: ${{ github.event.inputs.app }}
+          BRANCH: ${{ github.event.inputs.branch }}
+          CUSTOM_URL: ${{ github.event.inputs.custom_url }}
+          INTERNAL_URL: ${{ github.event.inputs.internal_url }}
+        run: |
+          KEY=$(echo $APP | cut -d- -f1)
+          ENV=$(echo $APP | cut -d- -f2)
+
+          FILE=src/config.json
+          TMP=$(mktemp)
+
+          jq --arg key "$KEY" --arg env "$ENV" \
+             --arg branch "$BRANCH" \
+             --arg custom_url "$CUSTOM_URL" \
+             --arg internal_url "$INTERNAL_URL" \
+          '
+            map(
+              if .key == $key and .env == $env then
+                . * {
+                  branch:       (if $branch       != "" then $branch       else .branch       end),
+                  customUrl:    (if $custom_url   != "" then $custom_url   else .customUrl    end),
+                  internalUrl:  (if $internal_url != "" then $internal_url else .internalUrl  end)
+                }
+              else . end
+            )
+          ' "$FILE" > "$TMP" && mv "$TMP" "$FILE"
+
+      - name: Commit and push
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add src/config.json
+          git diff --cached --quiet || git commit -m "config: update ${{ github.event.inputs.app }}"
+          git push
