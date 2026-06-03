@@ -139,7 +139,7 @@ main {
 
 .card-title { flex: 1; min-width: 0; }
 .card-name  { font-size: 0.825rem; font-weight: 600; line-height: 1.2; }
-.app-id     { font-size: 0.68rem; color: var(--muted); font-family: ui-monospace, monospace; margin-top: 0.1rem; }
+.app-id     { font-size: 0.68rem; color: var(--muted); font-family: ui-monospace, monospace; margin-top: 0.35rem; }
 
 .do-link {
   display: inline-flex;
@@ -236,7 +236,7 @@ main {
 }
 
 .branch-icon { margin-right: 0.3rem; }
-.branch-text { overflow-wrap: anywhere; }
+.branch-text { overflow-wrap: anywhere; line-height: 1.5; }
 
 @media (max-width: 600px) {
   .cards { grid-template-columns: 1fr; }

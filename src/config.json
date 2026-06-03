@@ -2,7 +2,7 @@
   {
     "key": "ppm",
     "env": "dev",
-    "name": "PPM",
+    "name": "Practice Management",
     "appId": "ppm-app-mvp-dev",
     "doUrl": "https://cloud.digitalocean.com/apps/4f506979-a64e-4280-b077-42e420445e6c?i=3a73e5",
     "customUrl": "https://ppm.palisaid.com",
@@ -24,7 +24,7 @@
   {
     "key": "ppm",
     "env": "demo",
-    "name": "PPM",
+    "name": "Practice Management",
     "appId": "ppm-app-demo",
     "doUrl": "https://cloud.digitalocean.com/apps/9df48957-1399-4427-9631-7e40afe78ec3?i=3a73e5",
     "customUrl": "https://demo-ppm.palisaid.com/",
