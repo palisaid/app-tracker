@@ -230,19 +230,20 @@ main {
 }
 
 .branch-chip {
-  display: block;
+  display: inline-flex;
+  align-items: center;
   background: var(--branch-bg);
   color: var(--branch-text);
   font-family: ui-monospace, monospace;
   font-size: 0.68rem;
   padding: 0.15rem 0.45rem;
   border-radius: 4px;
-  flex: 1;
   min-width: 0;
+  max-width: 100%;
 }
 
 .branch-icon { margin-right: 0.3rem; }
-.branch-text { overflow-wrap: anywhere; line-height: 1.5; }
+.branch-text { overflow-wrap: anywhere; line-height: 1.5; min-width: 0; }
 
 @media (max-width: 600px) {
   body { padding: 1.5rem 1rem 3rem; }
