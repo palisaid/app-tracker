@@ -30,7 +30,6 @@
     "customUrl": "https://demo-scout.palisaid.com/login",
     "internalUrl": "https://scout-app-demo-etcfo.ondigitalocean.app/",
     "ips": ["162.159.140.98"],
-    "branch": "feature/PUI-362-scout-patient-list-view",
-    "retired": ["134.199.228.23", "old rooney custom Droplet workflow"]
+    "branch": "dev"
   }
 ]
